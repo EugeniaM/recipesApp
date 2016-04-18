@@ -1,0 +1,23 @@
+<div class="view-recipe-container">
+	<div class="col-md-12 view-recipe-title">{{recipe.title}}</div>
+	<img ng-src={{recipe.photoUrl}} class="dish-picture" alt="фото блюда">
+	<div class="recipe-options">
+		<span>Поместить рецепт в:</span>
+		<div class="btn-group" role="group">
+			<a type="button" class="btn" id="chosen" ng-click="changeOption('chosen')" my-changebtn>Избранное</a>
+			<a type="button" class="btn" id="productsToPurchase" ng-click="changeOption('productsToPurchase')" my-changebtn>Покупки</a>
+			<a type="button" class="btn" id="planned" ng-click="changeOption('planned')" my-changebtn>План</a>
+		</div>
+		<a class="btn" id="change-button" href="#/myRecipes/{{routeID}}/edit" role="button">Изменить</a>
+	</div>
+	<div class="view-recipe-description">{{recipe.description}}</div>
+	<hr class="hr-view">
+	<div>
+		<ul>
+			<li ng-repeat="item in recipe.ingredients track by $index">{{item}}</li>
+		</ul>
+	</div>
+	<hr class="hr-view">
+	<div class="view-recipe-instruction" ng-bind-html="recipe.instruction"></div>
+
+</div>

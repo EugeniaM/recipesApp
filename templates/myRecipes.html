@@ -1,0 +1,10 @@
+<a class="btn btn-xs" id="addButton" href="#/myRecipes/add" role="button">Добавить рецепт</a>
+<hr>
+
+<div class="recipes-container">
+	<div class="col-md-6 col-sm-12 recipe" ng-repeat="recipe in recipesList track by $index">
+		<div class="recipe-title">{{recipe.title}}</div>
+		<div class="recipe-description">{{recipe.description | cutString}}</div>
+		<a class="btn view-recipe-btn" href="#/myRecipes/{{'myRecipe' + ($index+1)}}" role="button" ng-click="sendRecipeObject(recipe)">Посмотреть рецепт &#187</a>
+	</div>
+</div>

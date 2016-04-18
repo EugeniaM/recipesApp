@@ -1,0 +1,392 @@
+.menu {
+    width: 100%;
+    height: 76px;
+    background-color: #F9F9F9;
+    color: #393939;
+    font-family: arial;
+    position: fixed;
+    z-index: 10;
+}
+
+.title{
+    font-size: 24px;
+    padding-left: 25px;
+    padding-top: 30px;
+}
+
+.list{
+    padding-top: 37px;
+    text-align: right;
+}
+.list li{
+	display: inline-block;
+}
+
+.list li a{
+    font-size: 16px;
+    font-weight: bold;
+    color: #393939;
+    text-decoration: none;
+    margin: 10px;
+    padding: 1px;
+}
+
+@media screen and (max-width: 991px){
+    .title, .list{
+        margin-top: 5px;
+        text-align: center;
+        padding-top: 0;
+    }
+}
+
+.main {
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 76px;
+}
+
+
+hr{
+    clear: both;
+    margin: 0;
+}
+
+.tab-titles div{
+    display: inline-block;
+}
+
+.active{
+    border-bottom: 2px solid #BC271C;
+}
+
+#ideas-question{
+    font-size: 36px;
+    color: #393939;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.gallery{
+    width: 660px;
+    height: 440px;
+    overflow: hidden;
+    display: inline-flex;
+    position: relative;
+    margin-left: 20px;
+}
+
+.recipe-gallery{
+    position: relative;
+}
+
+.recipe-gallery img{
+    width: 660px;
+    height: 440px;
+}
+
+.picture-container{
+    position: relative;
+    padding: 0;
+    display: inline-flex;
+}
+
+.picture-container li{
+    list-style: none;
+    position: relative;
+}
+
+.gallery-text{
+    position: absolute;
+    width: 400px;
+    text-align: center;
+    left: 120px;
+    top: 200px;
+    color: white;
+}
+
+.gallery-title{
+    font-size: 30px;
+    color: white;
+}
+.gallery-title:hover{
+    color: white;
+}
+
+.gallery-description{
+    font-size: 14px;
+}
+
+.arrow-left, .arrow-right{
+    position: absolute;
+    height: 100%;
+    width: 80px;
+    z-index: 1;
+    font-size: 30px;
+}
+
+.arrow-left{
+    text-align: right;
+} 
+
+.arrow-right{
+    text-align: left;
+    left: 580px;
+}
+
+.arrow-left .glyphicon, .arrow-right .glyphicon{
+    color: white;
+    opacity: 0.7;
+    margin-top: 215px;
+}
+
+.gallery-navigation{
+    position: absolute;
+    left: 245px;
+    top: 400px;
+}
+
+.gallery-navigation ul{
+    padding: 0;
+}
+
+.gallery-navigation li{
+    list-style: none;
+    display: inline-block;
+    margin: 2px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+#addButton{
+    float: right;
+    background-color: #AEA79F;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+#new-recipe{
+    font-size: 20px;
+    color: #393939;
+    margin-top: 30px;
+}
+
+.form-container{
+    margin-top: 20px;
+    z-index: -1;
+}
+
+textarea.form-control{
+    height: 165px;
+}
+
+.ingredients{
+    margin-bottom: 10px;
+}
+
+#add-ingredient{
+    margin-top: 10px;
+    color: white;
+    background-color: #AEA79F;
+    margin-left: 320px;
+}
+
+#save-recipe{
+    background-color: #DD4814;
+    border: 0;
+    color: white;
+    margin-left: 305px;
+}
+
+label{
+    color: #393939;
+}
+
+.invalid{
+    color: red;
+    font-size: 0.8em;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    position: absolute;
+    z-index: 1;
+}
+
+input.ng-invalid{
+    border: 1px solid rgb(255,0,0);
+}
+
+.recipes-container{
+    margin-top: 50px;
+
+}
+
+.recipe{
+    padding: 0;
+    margin-bottom: 60px;
+    height: 200px;
+}
+
+.recipes-container > div:nth-child(odd){
+    padding-right: 15px;
+}
+.recipes-container > div:nth-child(even){
+    padding-left: 15px;
+}
+
+.recipe-title{
+    color: #393939;
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.recipe-description{
+    color: #393939;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.view-recipe-btn{
+    text-decoration: none;
+    background-color: #AEA79F;
+    color: white;
+}
+
+.view-recipe-btn:hover{
+    color: white;
+}
+
+@media screen and (max-width: 991px){
+    .recipes-container > div:nth-child(odd){
+        padding-right: 0;
+    }
+    .recipes-container > div:nth-child(even){
+        padding-left: 0;
+    }
+}
+
+.view-recipe-container{
+    margin-top: 35px;
+}
+
+.view-recipe-title{
+    font-size: 30px;
+    color: #393939;
+    margin-bottom: 25px;
+}
+
+.view-recipe-container img{
+    margin-left: -115px;
+    width: 1000px;
+}
+
+.recipe-options{
+    margin-top: 50px;
+    color: #393939;
+}
+
+.btn-group a{
+    background-color: #aea79f;
+    color: white;
+}
+
+.btn-group a:hover{
+    color: white;
+    background-color: #978e83;
+}
+
+#change-button{
+    float: right;
+    background-color: #AEA79F;
+    color: white;
+}
+
+#change-button:hover{
+    background-color: #978e83;
+}
+
+.view-recipe-description{
+    margin-top: 25px;
+    color: #393939;
+}
+
+.hr-view{
+    margin: 20px 0;
+}
+
+.view-recipe-instruction{
+    color: #393939;   
+}
+
+.btn-group .btn-pressed{
+    background-color: #978e83;
+    box-shadow: inset 0 0 2px 2px rgba(75,75,75, 0.1);
+}
+
+.btn-group .btn-pressed:hover{
+    background-color: #82786e;
+}
+
+.tab-titles{
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 100px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.tab-titles a{
+    text-decoration: none;
+    color: #DD4818;
+    font-weight: bold;
+    border-radius: 4px 4px 0 0;
+    padding-top: 10px;
+    margin-bottom: -1px;
+}
+
+.tab-titles a:hover{
+    color: #DD4818;
+    background-color: #f0f0f0;
+}
+
+.tab-titles a:nth-child(2), .tab-titles a:last-child{
+    margin-left: -4px;
+}
+
+.tab-titles .tab-active{
+    color: #777777;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid white;
+}
+
+.tab-titles .tab-active:hover{
+    color: #777777;
+    background-color: white;
+    cursor: default;
+}
+
+.list-header{
+    margin-top: -50px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    color: #333333;
+}
+
+.nothing-to-view{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.purchase-list{
+    margin-top: 20px;
+}
+
+.ingredients .glyphicon-remove{
+    color: #333333;
+}

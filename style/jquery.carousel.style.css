@@ -1,0 +1,26 @@
+.side-active-left .arrows-active, .side-active-right .arrows-active{
+	opacity: 1;
+}
+
+.side-active-left{
+	box-shadow: inset 80px 0 80px -40px rgba(50,50,50,0.3);
+	cursor: pointer;
+}
+
+.side-active-right{
+	box-shadow: inset -80px 0 80px -40px rgba(50,50,50,0.3);
+	cursor: pointer;
+}
+
+.indicator-hover{
+	cursor: pointer;
+}
+
+.indicator-active{
+	background-color: white;
+}
+
+.text-hover{
+	text-decoration: underline;
+	cursor: pointer;
+}

@@ -1,0 +1,10 @@
+<div class="list-header">Список покупок по рецептам</div>
+<hr>
+
+<div class="nothing-to-view" ng-if="!productsToPurchase.length">В этом списке пока ничего нет</div>
+
+<div class="purchase-list">
+	<ul>
+		<li ng-repeat="ingredient in productsToPurchase | orderBy:'toString()' track by $index">{{ingredient}}</li>
+	</ul>
+</div>

@@ -1,0 +1,118 @@
+<div id="new-recipe">Изменить рецепт</div>
+<hr>
+ <div class="form-container">
+
+    <form class="form-horizontal" name="editRecipeForm" ng-submit="saveRecipe(editRecipeForm)">
+        <fieldset>
+
+            <div class="form-group">
+                <label class="col-md-5 control-label" for="title">Название</label>
+                <div class="col-md-6">
+                    <input 
+                        id="title" 
+                        name="title" 
+                        type="text" 
+                        placeholder="" 
+                        class="form-control input-md" 
+						ng-maxlength="200"
+                        ng-model="title"
+                    >
+                    <span class="invalid" ng-show="editRecipeForm.title.$error.maxlength">Слишком длинное название</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-5 control-label" for="description">Описание</label>
+                <div class="col-md-6">
+                    <textarea 
+                        id="description" 
+                        name="description" 
+                        placeholder="" 
+                        class="form-control input-md" 
+                        ng-maxlength="2000" 
+                        ng-model="description"
+                    ></textarea>
+                    <span class="invalid" ng-show="editRecipeForm.description.$error.maxlength">Слишком длинное описание</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-5 control-label" for="photoUrl">Фотография (url)</label>
+                <div class="col-md-6">
+                    <input 
+                        id="photoUrl" 
+                        name="photoUrl"
+                        type="text" 
+                        placeholder="http://" 
+                        class="form-control input-md"
+                        ng-maxlength="200" 
+                        ng-model="photoUrl"
+                        
+                    >
+                    <span class="invalid" ng-show="editRecipeForm.photoUrl.$error.maxlength">Слишком длинный адрес</span>
+                </div>
+            </div>
+
+			<div class="form-group">
+                <label class="col-md-5 control-label" for="time">Время готовки</label>
+                <div class="col-md-6">
+                	<div class="input-group">
+	                    <input 
+	                        id="time" 
+	                        name="time" 
+	                        type="text" 
+	                        placeholder="сколько?" 
+	                        class="form-control input-md" 
+							ng-maxlength="4"
+							ng-pattern="/^\d*$/"
+	                        ng-model="time"
+	                        
+	                    >
+	                    <div class="input-group-addon">минут</div>
+	                </div>
+                    <span class="invalid" ng-show="editRecipeForm.time.$error.maxlength || editRecipeForm.time.$error.pattern">Это слишком долго (или введите время цифрами)</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-5 control-label" for="ingredients">Ингредиенты</label>
+                <div class="col-md-6">
+	                <div class="ingredients" ng-repeat="item in ingredients track by $index">
+                        <div class="input-group">
+    	                    <input 
+    	                        name="ingredients{{$index}}" 
+    	                        type="text" 
+    	                        placeholder="Название и количество" 
+    	                        class="form-control input-md ingredients" 
+    							ng-maxlength="100"
+    	                        ng-model="item.ingredient"
+    	                    >
+                            <div class="input-group-addon" my-removeingredients ng-click="removeIngredient(item)"><span class="glyphicon glyphicon-remove"></span></div>
+                        </div>
+		                <span class="invalid" ng-show="editRecipeForm.ingredients{{$index}}.$error.maxlength"}}>Слишком длинное название ингредиента</span>
+		            </div>
+		        </div>
+                <a class="btn btn-xs" id="add-ingredient" role="button" ng-click="addIngredient()">Добавить</a>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-5 control-label" for="instruction">Инструкция</label>
+                <div class="col-md-6">
+                    <textarea 
+                        id="instruction" 
+                        name="instruction" 
+                        placeholder="" 
+                        class="form-control input-md" 
+                        ng-maxlength="10000" 
+                        ng-model="instruction"
+                        required 
+                    ></textarea>
+                    <span class="invalid" ng-show="editRecipeForm.instruction.$error.maxlength">Слишком длинная инструкция</span>
+                </div>
+            </div>
+
+            <input type="submit" class="btn" id="save-recipe" role="button" value="Сохранить">
+
+        </fieldset>
+    </form>
+</div>

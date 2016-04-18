@@ -1,0 +1,12 @@
+<div class="list-header">Запланированные рецепты</div>
+<hr>
+
+<div class="nothing-to-view" ng-if="!plannedRecipes.length">В этом списке пока ничего нет</div>
+
+<div class="recipes-container">
+	<div class="col-md-6 col-sm-12 recipe" ng-repeat="recipe in plannedRecipes track by $index">
+		<div class="recipe-title">{{recipe.title}}</div>
+		<div class="recipe-description">{{recipe.description | cutString}}</div>
+		<a class="btn view-recipe-btn" href="#/myRecipes/{{'plannedRecipe' + ($index+1)}}" role="button" ng-click="sendRecipeObject(recipe)">Посмотреть рецепт &#187</a>
+	</div>
+</div>

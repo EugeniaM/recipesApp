@@ -1,0 +1,31 @@
+<div id="ideas-question">Что приготовить сегодня?</div>
+
+<div my-carousel class="gallery">
+	<div class="arrow-left">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</div>
+
+	<div class="recipe-gallery">
+		<ul class="picture-container">
+			<li ng-repeat="recipe in ideasRecipes track by $index">
+				<div class="gallery-text">
+					<a class="gallery-title" ng-click="sendRecipeObject(recipe); saveRecipeObject(recipe)" href="#/myRecipes/{{'ideasRecipe' + ($index+1)}}">{{recipe.title}}</a>
+					<div class="gallery-description">{{recipe.description | cutString}}</div>
+				</div>
+				<img ng-src={{recipe.photoUrl}}>
+			</li>		
+		</ul>
+	</div>
+	
+	<div class="arrow-right">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</div>
+
+	<div class="gallery-navigation">
+		<ul class="indicators">
+			<li ng-repeat="recipe in ideasRecipes track by $index" class="indicator"></li>
+		</ul>
+	</div>
+
+</div>
+

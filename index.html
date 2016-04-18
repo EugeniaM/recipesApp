@@ -1,0 +1,56 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Recipes</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+        <link rel="stylesheet" type="text/css" href="style/jquery.carousel.style.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.0/angular-sanitize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.5.0/lodash.min.js"></script>
+        
+
+        
+        
+    </head>
+
+    <body>
+        <!-- Меню -->
+        <div class="content" ng-app="recipesApp">
+            <div class="menu" ng-controller="navigationCtrl">
+                <div class="col-md-6 col-sm-12 title">Рецепты</div>
+                <ul class="col-md-6 col-sm-12 list">
+                    <li ng-repeat="item in menuList">
+                        <a href={{item.route}} ng-class="{'active' : item.route === currentPosition}">{{item.title}}</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Меню заголовков списков; появляется только когда находимся на маршруте списков -->
+            <div class="tab-titles" ng-if="currentlyInLists">
+                <a href="#/lists/chosenRecipes" class="tab-title btn" role="button" ng-class="{'tab-active' : findCurrentListPosition('chosenRecipes')}">Избранное</a>
+                <a href="#/lists/plannedRecipes" class="tab-title btn" role="button" ng-class="{'tab-active' : findCurrentListPosition('plannedRecipes')}">Запланировано</a>
+                <a href="#/lists/productsToPurchase" class="tab-title btn" role="button" ng-class="{'tab-active' : findCurrentListPosition('productsToPurchase')}">Покупки</a>
+            </div>
+
+            <!-- Основной контент -->
+            <div class="main" ng-view></div>
+        </div>
+
+
+
+        <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/filters.js"></script>
+        <script src="js/directives.js"></script>
+        <script src="jquery.carousel.js"></script>
+       
+       
+    </body>
+</html>
